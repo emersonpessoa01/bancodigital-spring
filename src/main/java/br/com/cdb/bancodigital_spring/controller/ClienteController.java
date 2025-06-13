@@ -1,8 +1,25 @@
 package br.com.cdb.bancodigital_spring.controller;
 
-import org.springframework.web.bind.annotation.RestController;
+import br.com.cdb.bancodigital_spring.entity.Cliente;
+import br.com.cdb.bancodigital_spring.service.ClienteService;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 @RestController
+@RequestMapping("/cliente")
 public class ClienteController
 {
+    private ClienteService clienteService = new ClienteService();
+    @PostMapping("/add")
+    public void addCliente(@RequestBody Cliente cliente) {
+        // Chama o serviço para adicionar o cliente
+        clienteService.addCliente(cliente.getNome(), cliente.getCpf());
+    }
+    @GetMapping("/all")
+    public ArrayList<Cliente> getAllClientes(){
+        // Chama o serviço para obter todos os clientes
+        return clienteService.getClientes();
+    }
+
 }

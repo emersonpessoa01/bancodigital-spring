@@ -6,7 +6,7 @@ import br.com.cdb.bancodigital_spring.entity.Cliente;
 // Camada que implementa as regras de negócio e serve para validar os dados
 
 public class ClienteService {
-    private ClienteDAO clienteDAO = new ClienteDao();
+    private ClienteDAO clienteDAO = new ClienteDAO();
 
     public void addCliente(String nome, long cpf){
         //VALIDAR CPF

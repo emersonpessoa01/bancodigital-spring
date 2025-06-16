@@ -107,11 +107,43 @@ Edite `src/main/resources/application.properties` para alterar configurações d
 
 Exemplo:
 ```
-spring.datasource.url=jdbc:h2:mem:bancodigitals
-spring.datasource.driverClassName=org.h2.Driver
+# =====================================
+# Configurações do Servidor
+# ======================================
+server.port=8081
+
+# ======================================
+# Informações da Aplicação
+# =====================================
+spring.application.name=bancodigital-jpa
+
+# ========================================
+# Configurações do Banco H2
+# ========================================
+spring.datasource.generate-unique-name=false
+spring.datasource.url=jdbc:h2:mem:bancodigital-jpa
 spring.datasource.username=sa
 spring.datasource.password=
+spring.datasource.driver-class-name=org.h2.Driver
+
+# Habilita o console web do H2
+spring.h2.console.enabled=true
+
+# Define a URL padrão do console (opcional, mas ajuda)
+spring.h2.console.path=/h2-console
+
+
+# ==================================
+# Configurações JPA / Hibernate
+# ==================================
 spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
+
+# ====================================================================
+
 ```
 [🔝 Voltar ao topo](#topo)
 

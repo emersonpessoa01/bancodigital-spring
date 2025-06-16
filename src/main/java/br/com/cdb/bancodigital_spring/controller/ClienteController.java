@@ -10,13 +10,13 @@ import java.util.ArrayList;
 @RequestMapping("/cliente")
 public class ClienteController {
     private ClienteService clienteService = new ClienteService();
-
+    // Método para adicionar cliente via JSON
     @PostMapping("/add")
     public void addCliente(@RequestBody Cliente cliente) {
         // Chama o serviço para adicionar o cliente
         clienteService.addCliente(cliente.getNome(), cliente.getCpf());
     }
-
+    // Método alternativo para adicionar cliente via URL
     @PostMapping("/add/{nome}/{cpf}")
     public void addCliente(@PathVariable String nome, @PathVariable long cpf) {
         // Chama o serviço para adicionar o cliente

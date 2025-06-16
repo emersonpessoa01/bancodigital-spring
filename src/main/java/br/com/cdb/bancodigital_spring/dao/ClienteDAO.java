@@ -11,10 +11,12 @@ public class ClienteDAO {
 
     // Neste exemplo, vamos usar uma lista em memória para simular o armazenamento de clientes.
     ArrayList<Cliente> listaClientes = new ArrayList<>();
-    public void save(Cliente cliente){
+
+    public void save(Cliente cliente) {
         listaClientes.add(cliente);
     }
-    public ArrayList<Cliente> listAll(){
+
+    public ArrayList<Cliente> listAll() {
         return listaClientes;
     }
 

@@ -4,6 +4,7 @@
 Uma API REST desenvolvida com Spring Boot para gerenciar operações bancárias digitais (conta corrente e poupança), incluindo funcionalidades como depósito, saque e transferência.
 
 ---
+## Topo
 
 ## 📋 Tabela de Conteúdos
 
@@ -20,7 +21,7 @@ Uma API REST desenvolvida com Spring Boot para gerenciar operações bancárias 
 
 ---
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 - Java 17+  
 - Spring Boot 3.x  
@@ -29,117 +30,134 @@ Uma API REST desenvolvida com Spring Boot para gerenciar operações bancárias 
 - Lombok (para redução de boilerplate)  
 - Maven ou Gradle  
 
+[🔝 Voltar ao topo](#topo)
+
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
-\`\`\`
-├── src
-│   ├── main
-│   │   ├── java/com/seuprojeto
-│   │   │   ├── controller       # APIs REST
-│   │   │   ├── service          # Lógica de negócio
-│   │   │   ├── model            # Entidades JPA
-│   │   │   ├── repository       # Repositórios JPA
-│   │   │   └── exception        # Tratamento de erros e exceptions
-│   │   └── resources
-│   │       ├── application.properties
-│   │       └── data.sql        # Dados iniciais (opcional)
-│   └── test                    # Testes unitários e de integração
+```
+src/
+├── main/
+│   ├── java/
+│   │   └── br/
+│   │       └── com/ seuprojeto/
+│   │               ├── controller/     # APIs REST
+│   │               ├── service/        # Lógica de negócio
+│   │               ├── model/          # Entidades JPA
+│   │               ├── repository/     # Repositórios JPA
+│   │               └── exception/      # Tratamento de erros e exceptions
+│   └── resources/
+│       ├── application.properties
+│       └── data.sql                # Dados iniciais (opcional)
+├── test/                           # Testes unitários e de integração
 └── pom.xml / build.gradle
-\`\`\`
+```
+[🔝 Voltar ao topo](#topo)
 
 ---
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
 - **Conta Corrente**: depósito, saque, transferência  
 - **Conta Poupança**: depósito, saque, transferência  
 - Validações de saldo e limites  
 - Tratamento de exceções com respostas HTTP adequadas (400, 404, etc.)  
 
+[🔝 Voltar ao topo](#topo)
+
 ---
 
-## 📦 Pré‑Requisitos
+## Pré‑Requisitos
 
 - Java 17 ou superior  
 - Maven 3.6+ / Gradle  
 - (Opcional) Banco externo: MySQL/PostgreSQL
 
+[🔝 Voltar ao topo](#topo)
+
 ---
 
-## ▶️ Como Executar
+## Como Executar
 
 1. Clone o repositório:  
-   \`\`\`bash
+   ```bash
    git clone https://github.com/emersonpessoa01/bancodigitals-spring.git
    cd bancodigitals-spring
-   \`\`\`
+   ```
 
 2. Execute via Maven:
-   \`\`\`bash
+   ```bash
    ./mvnw spring-boot:run
-   \`\`\`
+   ```
    Ou via Gradle:
-   \`\`\`bash
+   ```bash
    ./gradlew bootRun
-   \`\`\`
+   ```
 
-3. Acesse \`http://localhost:8080\` para testar os endpoints.
+3. Acesse `http://localhost:8080` para testar os endpoints.
+
+[🔝 Voltar ao topo](#topo)
 
 ---
 
-## ⚙️ Configurações
+## Configurações
 
-Edite \`src/main/resources/application.properties\` para alterar configurações de banco de dados, porta, logs etc.
+Edite `src/main/resources/application.properties` para alterar configurações de banco de dados, porta, logs etc.
 
 Exemplo:
-\`\`\`
+```
 spring.datasource.url=jdbc:h2:mem:bancodigitals
 spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
 spring.datasource.password=
 spring.jpa.hibernate.ddl-auto=update
-\`\`\`
+```
+[🔝 Voltar ao topo](#topo)
 
 ---
 
-## 🧠 Endpoints (exemplos)
+## Endpoints
 
-- \`POST /accounts\` – criar conta (corrente ou poupança)  
-- \`GET /accounts/{id}\` – detalhes da conta  
-- \`POST /accounts/{id}/deposit\` – depositar valor  
-- \`POST /accounts/{id}/withdraw\` – sacar valor  
-- \`POST /accounts/transfer\` – transferir entre contas  
+- `POST /accounts` – criar conta (corrente ou poupança)  
+- `GET /accounts/{id}` – detalhes da conta  
+- `POST /accounts/{id}/deposit` – depositar valor  
+- `POST /accounts/{id}/withdraw` – sacar valor  
+- `POST /accounts/transfer` – transferir entre contas  
+
+[🔝 Voltar ao topo](#topo)
 
 ---
 
-## ✅ Testes
+## Testes
 
 - Execute todos os testes:
-  \`\`\`bash
+  ```bash
   ./mvnw test
-  \`\`\`
+  ```
   Ou:
-  \`\`\`bash
+  ```bash
   ./gradlew test
-  \`\`\`
+  ```
+[🔝 Voltar ao topo](#topo)
 
 ---
 
-## 🤝 Contribuição
+## Contribuição
 
 1. Fork este repositório  
-2. Crie uma branch com sua feature (\`git checkout -b feature/nome-item\`)  
-3. Faça commit das suas melhorias (\`git commit -m 'Descrição da melhoria'\`)  
-4. Push na branch (\`git push origin feature/nome-item\`)  
+2. Crie uma branch com sua feature (`git checkout -b feature/nome-item`)  
+3. Faça commit das suas melhorias (`git commit -m 'Descrição da melhoria'`)  
+4. Push na branch (`git push origin feature/nome-item`)  
 5. Abra um Pull Request
+
+[🔝 Voltar ao topo](#topo)
 
 ---
 
-## 📄 Licença
+## Licença
 
-Este projeto está sob a licença MIT. Consulte o arquivo \`LICENSE\` para mais detalhes.
+Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
 
 ---
 
@@ -150,3 +168,5 @@ Este projeto está sob a licença MIT. Consulte o arquivo \`LICENSE\` para mais 
 - LinkedIn: /in/emersonpessoa01  
 
 Obrigado por vir até aqui! Se tiver dúvidas ou sugestões, fique à vontade para abrir uma issue. 😊
+
+[🔝 Voltar ao topo](#topo)
